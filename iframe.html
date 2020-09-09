@@ -1,5 +1,11 @@
 <body>
 <script>
-  window.parent.postMessage('some message data', '*');
+if (window.parent) {
+	if (/thirdparty=yes/.test(document.cookie)) {
+		window.parent.postMessage('MM:3PCsupported', '*');
+	} else {
+		window.parent.postMessage('MM:3PCunsupported', '*');
+	}
+}
 </script>
 </body>
