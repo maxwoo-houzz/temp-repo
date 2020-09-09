@@ -1,11 +1,5 @@
 <body>
 <script>
-if (window.parent) {
-	if (/thirdparty=yes/.test(document.cookie)) {
-		window.parent.postMessage('MM:3PCsupported', '*');
-	} else {
-		window.parent.postMessage('MM:3PCunsupported', '*');
-	}
-}
+document.location = "complete.html";
 </script>
 </body>
