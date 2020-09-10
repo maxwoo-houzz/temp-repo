@@ -5,7 +5,7 @@ function loop() {
 	console.log(`T minus ${countdown} seconds to launch`);
 	if (countdown <= 0) {
 		console.log('Sending message to space');
-		window.parent.postMessage('iframe execution complete', '*')
+		window.parent.postMessage('do you read me', '*')
 	} else {
 		countdown--;
 		setTimeout(loop, 1000)

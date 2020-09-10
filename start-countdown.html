@@ -2,8 +2,14 @@
 <html>
 <body>
 <script type="text/javascript">
+
+    let messageReceived = false;
+
     function onIFrameResponse({data}) {
-        console.log(data);
+        if (data === 'do you read me') {
+            console.log('copy that, yes we read you loud and clear.');
+            messageReceived = true;
+        }
     }
 
     function loadIFrame() {
@@ -11,11 +17,17 @@
 
         var iframe = document.createElement('iframe');
         iframe.style.display = 'none';
-        iframe.src = 'countdown.html';
+        iframe.src = 'https://maxwoo-houzz.github.io/temp-repo/countdown.html';
         document.body.appendChild(iframe);
     }
 
     loadIFrame();
+
+    setTimeout(() => {
+        if (!messageReceived) {
+            console.log('There seems to be something wrong with the comms...')
+        }
+    }, 15000);
 </script>
 </body>
 </html>
