@@ -1,0 +1,16 @@
+<body>
+<script>
+let countdown = 10;
+function loop() {
+	console.log(`T minus ${countdown} seconds to launch`);
+	if (countdown <= 0) {
+		console.log('Sending message to space');
+		window.parent.postMessage('iframe execution complete', '*')
+	} else {
+		countdown--;
+		setTimeout(loop, 1000)
+	}
+}
+loop();
+</script>
+</body>

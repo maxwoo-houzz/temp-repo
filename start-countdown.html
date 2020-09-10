@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type="text/javascript">
+    function onIFrameResponse({data}) {
+        console.log(data);
+    }
+
+    function loadIFrame() {
+        window.addEventListener('message', onIFrameResponse, false);
+
+        var iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = 'countdown.html';
+        document.body.appendChild(iframe);
+    }
+
+    loadIFrame();
+</script>
+</body>
+</html>
