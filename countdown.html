@@ -2,9 +2,9 @@
 <script>
 let countdown = 10;
 function loop() {
-	console.log(`T minus ${countdown} seconds to launch`);
+	console.log(`iFrame: T minus ${countdown} seconds to launch`);
 	if (countdown <= 0) {
-		console.log('Sending message to space');
+		console.log('iFrame: Sending message to space. Mission Control, do you read me?');
 		window.parent.postMessage('do you read me', '*')
 	} else {
 		countdown--;

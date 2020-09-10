@@ -7,7 +7,7 @@
 
     function onIFrameResponse({data}) {
         if (data === 'do you read me') {
-            console.log('copy that, yes we read you loud and clear.');
+            console.log('Mission Control here, yes we read you loud and clear.');
             messageReceived = true;
         }
     }
@@ -18,14 +18,19 @@
         var iframe = document.createElement('iframe');
         iframe.style.display = 'none';
         iframe.src = 'https://maxwoo-houzz.github.io/temp-repo/countdown.html';
+        console.log('Mission Control to IFrame, you are cleared for launch');
         document.body.appendChild(iframe);
     }
 
     loadIFrame();
 
     setTimeout(() => {
+        // debugger;
+    }, 5000);
+
+    setTimeout(() => {
         if (!messageReceived) {
-            console.log('There seems to be something wrong with the comms...')
+            console.log('Mission Control: There seems to be something wrong with the comms...')
         }
     }, 15000);
 </script>
